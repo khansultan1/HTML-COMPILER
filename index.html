@@ -1,0 +1,66 @@
+ <head>
+ <link href="css/bootstrap.css" rel="stylesheet">
+     <script src="js/jquery.js"></script>
+<style type="text/css">
+    textarea, iframe {
+       border: 2px solid #ddd;
+       height: 500px;
+       width: 100%;   
+    }
+    .line_dv {
+    width:30px;
+    float:left;
+    position:absolute;
+    
+    }
+    .input, .output {
+        width: 50%;
+        height: 50%;
+        float: left;
+      
+        margin-top:40px;
+    }
+    .top_container {
+       height: 40px;
+  width: 100%;
+  position: absolute;
+  top: 6px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+    }
+    .line {
+        float: left;
+        text-align:left;
+        font-weight:bold;
+    }
+</style>
+</head>
+<body>
+
+    <div class="input">
+            <form>
+                <strong>Code</strong>
+				
+                <textarea name="sourceCode" id="sourceCode" onchange="runCode()" onkeyup="getLineNumber(this, document.getElementById('lineNo'));" onmouseup="this.onkeypress();">
+<html>
+<head>
+<title>Hello</title>
+</head>
+<body>
+<h1>Hello!</h1>
+<p>Write HTML, CSS or JavaScript code here and click 'Run Code'.</p>
+</body>
+</html>
+                </textarea>
+            </form>
+       
+      </div>
+    <div class="output">
+       
+        <strong>Output</strong><iframe name="targetCode" id="targetCode"></iframe></div>
+    <div class="top_container"><div class="line">Line No<span class="line_dv" id="lineNo"></span></div>
+            <input type="button" class="btn-success" value="Run Code"/></div>
+<script src="js/script.js" type="text/javascript"></script>
+</body>
